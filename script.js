@@ -24,6 +24,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   let bitcoinAmount = localStorage.getItem("bitcoinAmount");
+
+  const calculateUSDAmount = () => {
+    bitcoinAmount = bitcoinAmountInput.value || 0;
+    const usdAmount = bitcoinAmount * bitcoinPrice;
+    usdAmountElement.innerHTML = `You own <b>$${usdAmount.toFixed(
+      2
+    )} USD</b> worth of Bitcoin.`;
+  };
+
   if (bitcoinAmount) {
     bitcoinAmountInput.value = bitcoinAmount;
     calculateUSDAmount();
@@ -33,12 +42,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     calculateUSDAmount();
     localStorage.setItem("bitcoinAmount", bitcoinAmountInput.value);
   });
-
-  const calculateUSDAmount = () => {
-    bitcoinAmount = bitcoinAmountInput.value || 0;
-    const usdAmount = bitcoinAmount * bitcoinPrice;
-    usdAmountElement.innerHTML = `You own <b>$${usdAmount.toFixed(
-      2
-    )} USD</b> worth of Bitcoin.`;
-  };
 });
