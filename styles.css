@@ -77,7 +77,7 @@ input[type="number"] {
   body {
     color-scheme: dark;
     color: white;
-    background: #2e2e2e;
+    background: #1d1d1d;
   }
 
   h1 {
@@ -85,10 +85,14 @@ input[type="number"] {
   }
 
   .container {
-    background: #333333;
+    background: #242424;
   }
 
   input[type="number"] {
-    background-color: #242424;
+    background-color: #1d1d1d;
+  }
+
+  button {
+    background: #005bc4;
   }
 }
